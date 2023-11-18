@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>New Thread</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <a href="{{ url_for('home') }}">Back to Home</a>
+  <h4>あなたは {{ nickname }} </h4>
+  <h1 class="red-text">新しいスレッドを追加</h1>
+  <form method="POST">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" required>
+    <br>
+    <label for="title">Comment</label>
+    <textarea id="comment" name="comment" class="comment_form" rows="10" required></textarea>
+    <br>
+    <input type="submit" value="Create Thread">
+  </form>
+</body>
+</html>
+
