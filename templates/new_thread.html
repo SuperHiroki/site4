@@ -3,20 +3,33 @@
 <head>
   <title>New Thread</title>
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.2/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <a href="{{ url_for('home') }}">Back to Home</a>
-  <h4>あなたは {{ nickname }} </h4>
-  <h1 class="red-text">新しいスレッドを追加</h1>
-  <form method="POST">
-    <label for="title">Title</label>
-    <input type="text" id="title" name="title" required>
-    <br>
-    <label for="title">Comment</label>
-    <textarea id="comment" name="comment" class="comment_form" rows="10" required></textarea>
-    <br>
-    <input type="submit" value="Create Thread">
-  </form>
+<body class="bg-gray-100 text-gray-800 font-sans p-4">
+  <div class="container mx-auto p-4 max-w-md bg-white rounded-lg shadow-lg">
+    <div class="mb-4 text-center">
+      <a href="{{ url_for('home') }}" class="text-blue-500 hover:text-blue-700">Back to Home</a>
+    </div>
+
+    <div class="text-center p-6 bg-gradient-to-r from-green-400 to-blue-500 rounded-lg shadow-lg mb-6">
+      <h4 class="text-xl font-semibold text-white mb-2">あなたは {{ nickname }}</h4>
+      <h1 class="text-4xl font-extrabold text-yellow-300 mb-4">新しいスレッドを追加</h1>
+    </div>
+    
+    
+    <form method="POST" class="space-y-4">
+      <div>
+        <label for="title" class="block text-sm font-medium text-gray-700">Title</label>
+        <input type="text" id="title" name="title" required class="mt-1 px-3 py-2 border border-gray-300 rounded-md w-full">
+      </div>
+      <div>
+        <label for="comment" class="block text-sm font-medium text-gray-700">Comment</label>
+        <textarea id="comment" name="comment" rows="10" required class="mt-1 p-3 border border-gray-300 rounded-md w-full"></textarea>
+      </div>
+      <div>
+        <input type="submit" value="Create Thread" class="w-full bg-green-500 text-white font-bold py-2 px-4 rounded hover:bg-green-600 transition">
+      </div>
+    </form>
+  </div>
 </body>
 </html>
-
